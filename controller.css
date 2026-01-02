@@ -1,0 +1,269 @@
+/* ================= VARIABLER ================= */
+:root {
+    --green: #3DE07E;
+    --pink: #E83F57;
+    --black: #000;
+    --white: #fff;
+    --gray-dark: #333;
+    --gray-light: #ccc;
+    /* för att göra mitt liv enklare*/
+
+    --max-width: 1200px;
+}
+
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--black);
+    color: var(--white);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: var(--green);
+    color: #111;
+    display: flex;
+    flex-direction: column; /* staplar h1 + logga */
+    align-items: center;   /* centrera horisontellt */
+    justify-content: space-between;
+    height: 450px;         /* justera efter behov */
+    padding-top: 1.5rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+header h1 {
+    font-size: 4.5rem;
+    margin: 0; /* ta bort standardmarginal */
+}
+
+/* Loggan under texten */
+header > img {
+    width: 180px;
+   
+}
+
+/* Om du har en aside med ikoner som ska ligga till vänster */
+header aside {
+    align-self: flex-start; /* flyttar aside till vänsterkant */
+}
+
+header aside img {
+    width: 30px;
+}
+/* ================= MAIN GRID ================= */
+main {
+    padding: 3rem 2rem;
+}
+
+.wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 i bredd för att kunna visa de 2 big-card rätt*/
+    gap: 2rem;
+
+}
+
+/* ================= SMÅ KORT ================= */
+.card {
+    grid-column: span 2; /* 2 av 6 delar = 1/3 av raden */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card img {
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 0.85rem;
+    color: var(--gray-light);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+/* ================= KNAPP ================= */
+.button {
+    background: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* ================= STORA KORT ================= */
+/*.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}*/
+    .Rubche 
+{
+    grid-column: span 6;
+    font-size: 2.0rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.7rem;
+
+}
+
+.big-card {
+    grid-column: span 3; /* 3 av 6 delar = 1/2 av raden */
+    background: var(--white);
+    color: var(--black);
+
+    display: flex;
+    flex-direction: column; /* 🔥 bild över text */
+    align-items: flex-start;
+}
+
+/* bild */
+.big-card figure img {
+   /* max-width: 260px;*/
+   /* margin: 2rem auto 1rem;*/
+}
+
+/* text */
+.big-card section {
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.big-card p {
+    margin-bottom: 1rem;
+}
+/* Header-rad */
+.summary-header {
+
+     grid-column: span 6;
+     background-color:var(--pink);
+    
+}
+
+/* Vanliga rader */
+.summary-row {
+
+}
+
+/* Total-rad */
+.summary-total {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    font-weight: bold;
+    border-top: 1px solid var(--gray-light);
+    padding-top: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+/* Checkout-knapp */
+.checkout-button {
+    align-self: flex-end;
+    margin-top: 1.5rem;
+    background: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: var(--gray-dark);
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-links {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-links a {
+    display: block; /* gör dem vertikala */
+    margin-bottom: 0.5rem;
+    color: var(--gray-light);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+/* Social media: rubrik och ikoner som kolumn */
+.footer-links h2:nth-of-type(2) {
+    margin-bottom: 0.5rem;
+}
+
+/* social icons */
+.icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.icons img {
+    width: 22px;
+}
+/* det var en stund googlande innan jag fick årdning på detta det måste finnas ett bättre sätt */
+/* ================= RESPONSIVT ================= */
+@media (max-width: 900px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .big-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .big-card {
+        grid-column: span 1;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+    .checkout-summary {
+    max-width: 600px;
+    margin: 3rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+
+
+}
