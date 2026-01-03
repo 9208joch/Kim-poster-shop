@@ -68,7 +68,49 @@ header aside img {
 main {
     padding: 3rem 2rem;
 }
+/* Wrapper för meny nav */
+.nav-wrapper {
+    position: relative;
+    /*display: inline-block;*/
+}
+#nav-toggle:checked + label + .nav-menu {
+    display: flex;
+}
+#nav-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.nav-icon {
+    cursor: pointer;
+    width: 32px;
+   /* height: auto;*/
+}
+/* Dropdown meny */
+.nav-menu {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background-color: var(--gray-dark);
+    display: none;
+    flex-direction: column;
+    min-width: 200px;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1000;
+}
+#nav-toggle:checked + label + .nav-menu {
+    display: flex;
+}
+.nav-menu a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 16px;
+}
 
+.nav-menu a:hover {
+    background-color: #444;
+}
 .wrapper {
     max-width: var(--max-width);
     margin: 0 auto;
