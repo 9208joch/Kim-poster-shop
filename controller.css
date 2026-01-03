@@ -1,4 +1,4 @@
-/* ================= VARIABLER ================= */
+/* variabler */
 :root {
     --green: #3DE07E;
     --pink: #E83F57;
@@ -10,8 +10,6 @@
 
     --max-width: 1200px;
 }
-
-/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
@@ -19,10 +17,11 @@
 }
 
 body {
-    font-family: Roboto; /*Tror detta stämmer med typsnittet*/
+    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    /* fallback om Roboto inte kan laddas */
+    /*Tror detta stämmer med typsnittet*/
     background: var(--black);
     color: var(--white);
-    
 }
 
 img {
@@ -31,7 +30,7 @@ img {
     display: block;
 }
 
-/* ================= HEADER ================= */
+/*  headder  */
 header {
     background: var(--green);
     color: #111;
@@ -47,13 +46,12 @@ header {
 
 header h1 {
     font-size: 4.5rem;
-    margin: 0; /* ta bort standardmarginal */
+    margin: 0; 
 }
 
 /* Loggan under texten */
 header > img {
-    width: 180px;
-   
+    width: 180px; 
 }
 
 /* Om du har en aside med ikoner som ska ligga till vänster */
@@ -64,27 +62,26 @@ header aside {
 header aside img {
     width: 30px;
 }
-/* ================= MAIN GRID ================= */
+/*  main gridd */
 main {
     padding: 3rem 2rem;
 }
 /* Wrapper för meny nav */
 .nav-wrapper {
     position: relative;
-    /*display: inline-block;*/
+    
+
 }
 #nav-toggle:checked + label + .nav-menu {
     display: flex;
 }
 #nav-toggle {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
+    display: none;
 }
 .nav-icon {
     cursor: pointer;
     width: 32px;
-   /* height: auto;*/
+
 }
 /* Dropdown meny */
 .nav-menu {
@@ -99,9 +96,7 @@ main {
     overflow: hidden;
     z-index: 1000;
 }
-#nav-toggle:checked + label + .nav-menu {
-    display: flex;
-}
+
 .nav-menu a {
     color: var(--white);
     text-decoration: none;
@@ -121,7 +116,7 @@ main {
 
 }
 
-/* ================= SMÅ KORT ================= */
+/*  Små kort  */
 .card {
     grid-column: span 2; /* 2 av 6 delar = 1/3 av raden */
     display: flex;
@@ -145,7 +140,7 @@ main {
     flex-grow: 1;
 }
 
-/* ================= KNAPP ================= */
+/*  knapp  */
 .button {
     background: var(--pink);
     color: var(--white);
@@ -156,12 +151,8 @@ main {
     cursor: pointer;
 }
 
-/* ================= STORA KORT ================= */
-/*.card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}*/
+/*  stora kort  */
+
 .cart-header {
     grid-column: span 6;
     font-size: 2rem;
@@ -174,21 +165,14 @@ main {
     color: var(--black);
 
     display: flex;
-    flex-direction: column; /* 🔥 bild över text */
+    flex-direction: column; /* bild över text */
     align-items: flex-start;
     font-size:  1.8rem;
-}
-
-/* bild */
-.big-card figure img {
-   /* max-width: 260px;*/
-   /* margin: 2rem auto 1rem;*/
 }
 
 /* text */
 .big-card section {
     padding: 1.5rem;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -211,7 +195,7 @@ main {
     padding-right: 0.6rem;
 }
 
-/* Header-rad */
+/* summering Header-rad */
 .summary-header,
 .summary-row,
 .summary-total {
@@ -233,23 +217,21 @@ main {
  }   
 
 /* Checkout-knapp */
+/* jag valde att hantera denna separat från övriga knappar då storlek skiljer sig */
 .checkout-button {
     align-self: flex-end;
     margin-top: 1.5rem;
-
     background: var(--pink);
     color: var(--white);
     border: none;
-
     padding: 0.9rem 1.8rem;
-    font-size: 1rem;
+    font-size: 2.2rem;
     font-weight: bold;
     border-radius: 4px;
-
     cursor: pointer;
 }
 
-/* ================= FOOTER ================= */
+
 footer {
     background: var(--gray-dark);
     padding: 3rem 2rem;
@@ -287,7 +269,7 @@ footer {
     width: 22px;
 }
 /* det var en stund googlande innan jag fick årdning på detta det måste finnas ett bättre sätt */
-/* ================= RESPONSIVT ================= */
+/* responsive för olika skärmar */
 @media (max-width: 900px) {
     .wrapper {
         grid-template-columns: repeat(2, 1fr);
@@ -321,7 +303,4 @@ footer {
     flex-direction: column;
     gap: 0.8rem;
 }
-
-
-
 }
