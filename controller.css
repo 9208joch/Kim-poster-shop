@@ -19,9 +19,10 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Roboto; /*Tror detta stämmer med typsnittet*/
     background: var(--black);
     color: var(--white);
+    
 }
 
 img {
@@ -84,6 +85,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    font-size:  1.8rem;
 }
 
 .card img {
@@ -107,7 +109,7 @@ main {
     color: var(--white);
     border: none;
     padding: 0.5rem 0.8rem;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     border-radius: 3px;
     cursor: pointer;
 }
@@ -132,6 +134,7 @@ main {
     display: flex;
     flex-direction: column; /* 🔥 bild över text */
     align-items: flex-start;
+    font-size:  1.8rem;
 }
 
 /* bild */
@@ -157,20 +160,36 @@ main {
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
+    
 }
+.summary-header {
+    background-color: #ED363633;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    padding-right: 0.6rem;
+}
+
 /* Header-rad */
 .summary-header,
 .summary-row,
 .summary-total {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    padding: 0.6rem 0;
     align-items: center;
+
 }
-.summary-row {
-    border-bottom: 1px solid var(--gray-light);
-    font-size: 0.9rem;
+.summary-row,
+.summary-total {
+
+    padding-bottom: 1.0rem;
+    padding-top: 1.0rem;
+    padding-right: 1.0rem;
+    font-size: 1.8rem;
 }
+.summary-total {
+    border-top: 1px solid var(--gray-light);
+ }   
+
 /* Checkout-knapp */
 .checkout-button {
     align-self: flex-end;
