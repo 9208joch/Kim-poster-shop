@@ -1,4 +1,4 @@
-/* variabler */
+
 :root {
     --green: #3DE07E;
     --pink: #E83F57;
@@ -268,7 +268,6 @@ footer {
 .icons img {
     width: 22px;
 }
-/* det var en stund googlande innan jag fick årdning på detta det måste finnas ett bättre sätt */
 /* responsive för olika skärmar */
 @media (max-width: 900px) {
     .wrapper {
