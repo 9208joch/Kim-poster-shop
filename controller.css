@@ -166,13 +166,6 @@ main > .big-wrapper + .wrapper {
 
 
 /*  stora kort (1/2 rad)   */
-
-
-/*.cart-header {
-    max-width: var(--max-width);
-    margin: 2.5rem auto 0.7rem;
-    font-size: 2rem;
-}*/
 .cart-header {
     grid-column: 1 / -1;
     font-size: 2rem;
